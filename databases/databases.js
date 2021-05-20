@@ -5,7 +5,7 @@ const sequelize = new Sequelize(
     'user', //pasword
     {
         dialect:'postgres',
-        host:process.env.host,
+        host:'localhost',
         operatorsAliases: false,
         pool:{
             max:5,
