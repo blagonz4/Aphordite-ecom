@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('mySever/routes/index');
+const indexRouter = require('./routes/index');
 const usersRouter = require('mySever/routes/Users');
 const roleRouter = require('mySever/routes/Roles');
 const sizeRouter = require('mySever/routes/Sizes');
