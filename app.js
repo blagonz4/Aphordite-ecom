@@ -6,7 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/Users');
-const roleRouter = require('./routes/role');
+const roleRouter = require('./routes/Roles');
 const sizeRouter = require('./routes/Sizes');
 const brandRouter = require('./routes/Brands');
 const modelRouter = require('./routes/Models');
@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/role',roleRouter);
+app.use('/roles',roleRouter);
 app.use('/sizes',sizeRouter);
 app.use('/brands',brandRouter);
 app.use('/models',modelRouter);
