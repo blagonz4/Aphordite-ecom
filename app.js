@@ -13,7 +13,7 @@ const modelRouter = require('./routes/Models');
 const collectionRouter = require('./routes/Collections');
 const productRouter = require('./routes/Products');
 const productDetailRouter = require('./routes/ProductDetails');
-const rolepermissionRouter = require('./routes/Role_Permission');
+
 const app = express();
 
 // view engine setup
@@ -35,7 +35,7 @@ app.use('/models',modelRouter);
 app.use('/collections',collectionRouter);
 app.use('/products',productRouter);
 app.use('/productdetails',productDetailRouter);
-app.use('/role_permission',rolepermissionRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
