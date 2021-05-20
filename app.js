@@ -4,15 +4,15 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/Users');
-const roleRouter = require('./routes/Roles');
-const sizeRouter = require('./routes/Sizes');
-const brandRouter = require('./routes/Brands');
-const modelRouter = require('./routes/Models');
-const collectionRouter = require('./routes/Collections');
-const productRouter = require('./routes/Products');
-const productDetailRouter = require('./routes/ProductDetails');
+const indexRouter = require('mySever/routes/index');
+const usersRouter = require('mySever/routes/Users');
+const roleRouter = require('mySever/routes/Roles');
+const sizeRouter = require('mySever/routes/Sizes');
+const brandRouter = require('mySever/routes/Brands');
+const modelRouter = require('mySever/routes/Models');
+const collectionRouter = require('mySever/routes/Collections');
+const productRouter = require('mySever/routes/Products');
+const productDetailRouter = require('mySever/routes/ProductDetails');
 
 const app = express();
 
