@@ -27,14 +27,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/roles',roleRouter);
-app.use('/sizes',sizeRouter);
-app.use('/brands',brandRouter);
-app.use('/models',modelRouter);
-app.use('/collections',collectionRouter);
-app.use('/products',productRouter);
-app.use('/productdetails',productDetailRouter);
+app.use('/Users', usersRouter);
+app.use('/Roles',roleRouter);
+app.use('/Sizes',sizeRouter);
+app.use('/Brands',brandRouter);
+app.use('/Models',modelRouter);
+app.use('/Collections',collectionRouter);
+app.use('/Products',productRouter);
+app.use('/ProductDetails',productDetailRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
