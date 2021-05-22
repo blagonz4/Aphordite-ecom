@@ -5,7 +5,8 @@ const sequelize = new Sequelize(
     'user', //pasword
     {
         dialect:'postgres',
-        host:'aphodite-ecom.herokuapp.com',
+        password: 'user',
+        host:'localhost',
         operatorsAliases: false,
         pool:{
             max:5,
