@@ -1,1 +1,1 @@
-web: node ./bin/www
+web: psql -U postgres --password
