@@ -5,12 +5,12 @@ const Test = require('../models/test');
 
 router.get('/',async (req,res) => {
     try {
-        const tests = await Test.findAll({
+        const test = await Test.findAll({
             attributes: ['id','name'],
         });
         res.json({
             result: 'oke',
-            data:tests,
+            data:test,
             message: "query list Sizes successfully"
         });
     } catch (error){
