@@ -16,7 +16,7 @@ const Sequelize = require('sequelize');
 //         }
 //     }
 // );
-const sequelize = new Sequelize('postgres://postgres:user@:5432/postgres')
+const sequelize = new Sequelize('postgres://postgres:user@db:5432/postgres')
 const Op = Sequelize.Op;
 module.exports = {
     sequelize,
