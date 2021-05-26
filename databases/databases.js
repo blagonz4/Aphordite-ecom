@@ -5,7 +5,7 @@ const sequelize = new Sequelize(
         'user', //pasword
         {
             dialect:'postgres',
-            host:'localhost',
+            host:process.env.DATABASE_URL,
             port:'5432',
             operatorsAliases: false,
             pool:{
@@ -17,10 +17,6 @@ const sequelize = new Sequelize(
         }
     
 );
-
-
-
-
 
 const Op = Sequelize.Op;
 module.exports = {
