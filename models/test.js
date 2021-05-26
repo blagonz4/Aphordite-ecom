@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../databases/databases').sequelize;
 const Op = require('../databases/databases').Op;
-const Size = sequelize.define(
+const test = sequelize.define(
     'test',{//Model name
         id:{
             type:Sequelize.INTEGER,
@@ -13,4 +13,4 @@ const Size = sequelize.define(
     },{timestamps:false,}
 );
 
-module.exports = Size;
+module.exports = test;
