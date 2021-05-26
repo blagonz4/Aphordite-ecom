@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const test = require('../models/test');
+const Test = require('../models/test');
 
 router.get('/',async (req,res) => {
     try {
-        const test = await test.findAll({
+        const tests = await Test.findAll({
             attributes: ['id','name'],
         });
         res.json({
             result: 'oke',
-            data:test,
+            data:tests,
             message: "query list Sizes successfully"
         });
     } catch (error){

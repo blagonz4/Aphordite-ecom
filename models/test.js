@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../databases/databases').sequelize;
 const Op = require('../databases/databases').Op;
-const test = sequelize.define(
+const Test = sequelize.define(
     'test',{//Model name
         id:{
             type:Sequelize.INTEGER,
@@ -13,4 +13,4 @@ const test = sequelize.define(
     },{timestamps:false,}
 );
 
-module.exports = test;
+module.exports = Test;
