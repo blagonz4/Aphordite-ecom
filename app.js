@@ -11,6 +11,7 @@ const sizeRouter = require('./routes/Sizes');
 const brandRouter = require('./routes/Brands');
 const modelRouter = require('./routes/Models');
 const testRouter = require('./routes/test');
+const userRouter = require('./routes/Users');
 const collectionRouter = require('./routes/Collections');
 const productRouter = require('./routes/Products');
 const productDetailRouter = require('./routes/ProductDetails');
@@ -36,6 +37,7 @@ app.use('/Models',modelRouter);
 app.use('/test',testRouter);
 app.use('/Collections',collectionRouter);
 app.use('/Products',productRouter);
+app.use('/Users',userRouter);
 app.use('/ProductDetails',productDetailRouter);
 
 // catch 404 and forward to error handler

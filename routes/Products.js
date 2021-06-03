@@ -163,5 +163,47 @@ router.get('/',async (req,res) => {
 
 });
 
+router.get('/:name',async (req,res) => {
+    const {name} = req.params;
+    try {
+        const Products = await Product.findOne({
+            attributes: ['name'],
+            where:{
+                name
+            },
+            include:[
+                {
+                    model: Brand,
+                    as: 'brand', 
+                    require:false},
+                {
+                    model: Model,
+                    as: 'model', 
+                    require:false},
+                {
+                    model: Collection,
+                    as: 'collection', 
+                    require:false},
+                {
+                    model: ProductDetail,
+                    as: 'productdetails', 
+                    require:false  
+                }]
+        });
+        res.json({
+            result: 'oke',
+            data:Products,
+            message: "query list Products successfully"
+        });
+    } catch (error){
+        res.json({
+            result: 'failed',
+            message: `query list Products failed, Error ${error}`
+        });
+    }
+
+});
+
+
 
 module.exports = router;
