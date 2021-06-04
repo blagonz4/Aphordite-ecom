@@ -192,7 +192,7 @@ router.get('/:id',async (req,res) => {
         });
         res.json({
             result: 'oke',
-            data:Products,
+            data:Product,
             message: "query list Products successfully"
         });
     } catch (error){
