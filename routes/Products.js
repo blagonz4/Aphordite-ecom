@@ -166,7 +166,7 @@ router.get('/',async (req,res) => {
 router.get('/:id',async (req,res) => {
     const {id} = req.params;
     try {
-        const Products = await Product.findOne({
+        const product = await Product.findOne({
             attributes: ['id'],
             where:{
                 id
@@ -192,7 +192,7 @@ router.get('/:id',async (req,res) => {
         });
         res.json({
             result: 'oke',
-            data:Product,
+            data:product,
             message: "query list Products successfully"
         });
     } catch (error){
