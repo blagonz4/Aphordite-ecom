@@ -163,13 +163,13 @@ router.get('/',async (req,res) => {
 
 });
 
-router.get('/:name',async (req,res) => {
-    const {name} = req.params;
+router.get('/:id',async (req,res) => {
+    const {id} = req.params;
     try {
         const Products = await Product.findOne({
-            attributes: ['name'],
+            attributes: ['id'],
             where:{
-                name
+                id
             },
             include:[
                 {
