@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const Op = require('../databases/databases').Op;
 const Product = require('../models/Products');
 const Brand = require ('../models/Brands');
 const Model = require ('../models/Models');
@@ -124,7 +124,7 @@ router.delete('/:id',async (req,res) => {
     }
 });
 
-router.get('/',async (req,res) => {
+router.get('/all',async (req,res) => {
     try {
         const Products = await Product.findAll({
             attributes: ['id',
@@ -163,7 +163,7 @@ router.get('/',async (req,res) => {
 
 });
 
-router.get('/:id',async (req,res) => {
+router.get('/get/:id',async (req,res) => {
     const {id} = req.params;
     try {
         const product = await Product.findOne({
@@ -204,6 +204,64 @@ router.get('/:id',async (req,res) => {
 
 });
 
+router.get('/search/:name',async (req,res) => {
+    const {name} = req.params;
+    try {
+        const product = await Product.findAll({
+            attributes: ['name'],
+            where:{
+                name:{
+                    [Op.iLike]:'%'+name+'%'
+                }
+            },
+            include:[
+                {
+                    model: Brand,
+                    as: 'brand', 
+                    require:false},
+                {
+                    model: Model,
+                    as: 'model', 
+                    require:false},
+                {
+                    model: Collection,
+                    as: 'collection', 
+                    require:false},
+                {
+                    model: ProductDetail,
+                    as: 'productdetails', 
+                    require:false  
+                }]
+        });
+        res.json({
+            result: 'oke',
+            data:product,
+            message: "query list Productsxiii successfully"
+        });
+    } catch (error){
+        res.json({
+            result: 'failed',
+            message: `query list Products failed, Error ${error}`
+        });
+    }
+
+});
+
+
+router.get('/filter/',async (req,res) => {
+    const { brandName,
+            modelName,
+            collectionName} = req.body;
+    try {
+        
+    } catch (error){
+        res.json({
+            result: 'failed',
+            message: `query list Products failed, Error ${error}`
+        });
+    }
+
+});
 
 
 module.exports = router;
